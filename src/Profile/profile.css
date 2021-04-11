@@ -1,0 +1,30 @@
+.profile-pic {
+  width: 100%;
+  /* margin-top: 15% !important; */
+}
+
+.info {
+  padding: 1vh;
+}
+
+.info span {
+  color: var(--secondary-color);
+}
+
+.info:nth-child(even) {
+  background: var(--secondary-color) !important;
+}
+
+.info:nth-child(odd) {
+  background: var(--primary-color) !important;
+}
+
+.info:nth-child(even) p,
+.info:nth-child(even) span {
+  color: var(--primary-color) !important;
+}
+
+.info p {
+  position: absolute;
+  left: 50%;
+}

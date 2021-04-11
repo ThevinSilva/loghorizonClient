@@ -1,0 +1,271 @@
+.formTitle {
+  margin: 2vh !important;
+}
+
+/*---------------- PARTICIPENTS ---------------- */
+#friendSearch {
+  border-radius: 3vh;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  transition: 100ms ease;
+}
+
+#friendSearch:focus {
+  border: none;
+}
+
+/* Category CSS */
+
+.carouselContainer {
+  display: block;
+  /* margin-top: 2rem; */
+  height: 50vh !important;
+}
+
+.categoryCard {
+  width: 15vw !important;
+  height: 80% !important;
+
+  background-color: var(--primary-color) !important;
+}
+
+.categoryCard > p {
+  margin-top: 0.5rem;
+}
+
+.btn-container {
+  align-self: flex-end;
+  order: 4;
+}
+
+.btn-container * {
+  margin: 0 !important;
+}
+.btn-container div {
+  margin-left: 0.5rem !important;
+}
+
+.upload-image {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+
+/*---------------- BOARD VIEW ----------------*/
+
+/* POST CONTAINER  */
+.postContainer {
+  padding: 0% !important;
+  height: 79vh;
+  transition: var(--transition-speed) ease !important;
+  overflow: auto;
+  padding: 2%;
+  padding-bottom: 0%;
+}
+
+.parallaxContainer {
+  padding: 0 !important;
+}
+
+.banner {
+  height: 30vh;
+  background-attachment: fixed;
+  /* background-position: 15% 7vh; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contract-right {
+  width: 80% !important;
+}
+.expand-right {
+  width: 100% !important;
+}
+
+.contract-bottom {
+  height: 53vh;
+}
+
+.post {
+  margin: 0 2.5%;
+  margin-bottom: 5%;
+  width: 95%;
+  background-color: #424242;
+  position: relative;
+  z-index: 0;
+  transition: 300ms ease;
+  transform: scale(1);
+}
+
+.postbar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 2%;
+  padding-left: 0;
+  padding-bottom: 0%;
+}
+
+.post article {
+  padding: 2% !important;
+  padding-left: 0 !important;
+}
+
+.post.row section {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 !important;
+}
+
+.comment {
+  margin-top: 3%;
+}
+
+.rightBar {
+  position: absolute;
+  width: 20%;
+  top: 37vh;
+  height: 83vh;
+  background-color: #212121;
+  overflow-y: scroll;
+  transition: var(--transition-speed) ease;
+}
+
+.rightBar-open {
+  left: 80% !important;
+}
+
+.rightBar-close {
+  left: 100% !important;
+}
+
+.rightBar::-webkit-scrollbar {
+  display: none;
+}
+
+.static {
+  position: relative;
+}
+.boardSideBar.tabs .tab a {
+  color: var(--third-color) !important;
+} /*Black color to the text*/
+
+.boardSideBar.tabs .tab a:hover {
+  background-color: #424242;
+  color: var(--third-color);
+} /*Text color on hover*/
+
+.boardSideBar.tabs .tab a.active {
+  background-color: #424242 !important;
+}
+
+.boardSideBar.tabs .tab.disabled {
+  filter: grayscale(0.8);
+  color: var(--primary-color) !important;
+}
+
+/* Background and text color when a tab is active
+
+.boardSideBar.tabs .indicator {
+  background-color: var(--third-color);
+} /*Color of underline*/
+
+.reactMdEditor {
+  transition: var(--transition-speed) ease;
+  background-color: var(--secondary-color);
+  color: var(--primary-color) !important;
+  width: 70%;
+}
+
+.mde-textarea-wrapper textarea.mde-text {
+  color: white !important;
+  border: none;
+}
+.postButton {
+  position: relative;
+  width: 100%;
+  height: 3vh;
+  background: var(--gradient);
+  border: none;
+  color: white;
+}
+
+#boardPic {
+  height: 6rem;
+  width: 6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 0.3rem dashed white;
+}
+
+.passwordBox {
+  background-color: var(--primary-color);
+  height: 35%;
+  width: 30%;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.passwordBoardName {
+  color: var(--secondary-color);
+}
+
+#changeBackground {
+  display: none;
+  top: 2%;
+  left: 96%;
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: #272727;
+}
+
+.banner:hover #changeBackground {
+  display: block;
+}
+
+.postIcons {
+  transition: 200ms ease;
+}
+
+.postIcons-active {
+  color: var(--third-color);
+  transform: scale(1.5);
+}
+
+.postIcons-inactive {
+  color: var(--third-color);
+  filter: saturate(0.5);
+}
+
+.postIcons:hover {
+  color: var(--third-color);
+  transform: scale(1.5);
+}
+
+.messageSection {
+  transition: var(--transition-speed) ease;
+}
+
+.post-popup {
+  transform: scale(1.04);
+}
+
+.react-contexify {
+  transition: none !important;
+  transform: translateY(20vh) translateX(-40vh) !important;
+}
+
+.react-contexify {
+  transition: none !important;
+  transform: translateY(20vh) translateX(-40vh) !important;
+}
+
+.react-contexify__item:not(.react-contexify__item--disabled):hover
+  > .react-contexify__item__content,
+.react-contexify__item:not(.react-contexify__item--disabled):focus
+  > .react-contexify__item__content {
+  background: var(--gradient) !important;
+}

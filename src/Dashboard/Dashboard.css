@@ -1,0 +1,28 @@
+.posts-jumbotron{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap ;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* background-color: var(--secondary-color-toned);
+    border-radius: 2vh; */
+    height: 25vh;
+}
+
+.posts-jumbotron-item{
+    background-color: var(--primary-color);
+    margin: 2%;
+    height: 20vh;
+    width: 20vw;
+    transition: var(--transition-speed) ease;
+}
+
+.posts-jumbotron-item:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.posts-jumbotron-item-header{
+    display: flex;
+    flex-flow: nowrap row;
+}

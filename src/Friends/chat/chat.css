@@ -1,0 +1,29 @@
+.chat-container {
+  position: absolute;
+  transition: var(--transition-speed) ease !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  border-radius: 8px;
+  height: 90vh;
+  width: 100%;
+}
+
+.recess {
+  width: 80%;
+}
+
+.drawer {
+  margin: 0 !important;
+  transition: var(--transition-speed) ease !important;
+  position: relative;
+  width: 20%;
+  padding: 0 !important;
+  top: 0vh;
+  left: 80%;
+}
+
+.hidden {
+  left: 100% !important;
+}

@@ -1,0 +1,38 @@
+.infoBar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: var(--third-color);
+  background-image: var(--gradient);
+  height: 7vh;
+  width: 100%;
+}
+
+li[class="collection-item  grey darken-4"] {
+  margin-bottom: 3rem;
+}
+
+.leftInnerContainer {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+}
+
+.rightInnerContainer {
+  display: flex;
+  flex: 0.5;
+  justify-content: flex-end;
+  margin-right: 1%;
+}
+
+.leftInnerContainer * {
+  margin: 0 1%;
+}
+
+.imageIcon {
+  border-radius: 50%;
+}
+
+.gear {
+  transition: var(--transition-speed) ease;
+}
