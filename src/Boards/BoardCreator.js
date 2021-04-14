@@ -224,13 +224,13 @@ class BoardCreator extends Component {
       if (this.state.response.status === 200) {
         M.toast({
           html: `<span class="text-green text-accent-3">${this.state.response.data.message}</span><button onClick="redirectToPage"class="btn-flat toast-actiont green accent-3">open</button>`,
-          displayLength: 200,
+          displayLength: 5000,
           completeCallback: this.redirectToPage,
         });
       } else {
         M.toast({
           html: `<span class="text-red text-accent-3">${this.state.response.data.message}</span><button class="btn-fla toast-actiont red accent-3">Undo</button>`,
-          displayLength: 200,
+          displayLength: 5000,
         });
       }
     }

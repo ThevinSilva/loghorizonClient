@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FcIcons from "react-icons/fc";
+import axios from "axios";
 import "./LandingPage.css";
 import video from "./vid.mp4";
 
@@ -9,12 +10,17 @@ const LandingPage = () => {
 
   const loginWithRedirect = () => {
     // change during or after deployment
-    window.location.assign(process.env.REACT_APP_SERVER + "/auth/google");
+    axios
+      .get("/auth/google", {
+        withCredentials: true,
+        baseURL: process.env.REACT_APP_SERVER,
+      })
+      .then((res) => console.log(res));
   };
 
   const gitHubRepo = () => {
     // change during or after deployment
-    window.location.assign("https://github.com/ThevinSilva/log_horizon");
+    window.location.assign("https://github.com/ThevinSilva");
   };
   useEffect(() => {
     document.querySelector("#vid").play();
