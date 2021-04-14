@@ -10,12 +10,7 @@ const LandingPage = () => {
 
   const loginWithRedirect = () => {
     // change during or after deployment
-    axios
-      .get("/auth/google", {
-        withCredentials: true,
-        baseURL: process.env.REACT_APP_SERVER,
-      })
-      .then((res) => console.log(res));
+    window.location.assign(process.env.REACT_APP_SERVER + "/auth/google");
   };
 
   const gitHubRepo = () => {
