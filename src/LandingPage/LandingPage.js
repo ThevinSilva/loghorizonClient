@@ -1,29 +1,44 @@
 import React, { useEffect, useState } from "react";
 import * as AiIcons from "react-icons/ai";
 import * as FcIcons from "react-icons/fc";
+import { Modal, Button } from "react-materialize";
 import axios from "axios";
 import "./LandingPage.css";
-import video from "./vid.mp4";
 
 const LandingPage = () => {
   const [fade, setFade] = useState(false);
+  const [video, setVideo] = useState(null);
 
   const loginWithRedirect = () => {
-    // change during or after deployment
     window.location.assign(process.env.REACT_APP_SERVER + "/auth/google");
   };
 
   const gitHubRepo = () => {
-    // change during or after deployment
     window.location.assign("https://github.com/ThevinSilva");
   };
   useEffect(() => {
-    document.querySelector("#vid").play();
-    setTimeout(() => {
-      setFade(true);
-    }, 5000);
+    axios({
+      url: window.location.protocol + "//" + window.location.host + "/vid.mp4",
+      method: "GET",
+      responseType: "blob",
+    }).then((res) => {
+      setVideo(URL.createObjectURL(res.data));
+    });
   }, []);
-  return (
+
+  useEffect(() => {
+    if (video !== null) {
+      let temp = document.querySelector("#vid");
+      temp.play();
+      setTimeout(() => {
+        setFade(true);
+      }, 5000);
+    }
+  }, [video]);
+
+  return video === null ? (
+    <div className="main-loader"></div>
+  ) : (
     <div className="z-index-0">
       <video id="vid" autoplay muted>
         <source src={video} type="video/mp4" />
@@ -100,13 +115,67 @@ const LandingPage = () => {
           >
             <AiIcons.AiFillGithub />
           </button>
-          <button
-            style={{ marginLeft: "5vh", width: "10%" }}
-            className="mainBtn btn waves-effect white z-index-5"
-            onClick={() => loginWithRedirect()}
+
+          <Modal
+            actions={[
+              <Button
+                flat
+                modal="close"
+                node="button"
+                waves="red"
+                onClick={() => {
+                  window.location.replace(
+                    "https://ec.europa.eu/info/cookies_en"
+                  );
+                }}
+              >
+                learn more
+              </Button>,
+              <Button
+                modal="close"
+                node="button"
+                waves="green"
+                className="amber darken-3"
+                onClick={() => loginWithRedirect()}
+              >
+                I understand & accept
+              </Button>,
+            ]}
+            className="black-text"
+            bottomSheet={false}
+            fixedFooter={false}
+            header="Cookie Policy"
+            id="Modal-0"
+            open={false}
+            options={{
+              dismissible: true,
+              endingTop: "10%",
+              inDuration: 250,
+              onCloseEnd: null,
+              onCloseStart: null,
+              onOpenEnd: null,
+              onOpenStart: null,
+              opacity: 0.5,
+              outDuration: 250,
+              preventScrolling: true,
+              startingTop: "4%",
+            }}
+            trigger={
+              <button
+                style={{ marginLeft: "5vh", width: "10%" }}
+                className="mainBtn btn waves-effect white z-index-5"
+              >
+                <FcIcons.FcGoogle />
+              </button>
+            }
           >
-            <FcIcons.FcGoogle />
-          </button>
+            <p>
+              This website like many others makes use of cookies. In order to
+              provide a personalised experience. Cookies are used to hold
+              information regarding account. It does not contain any personaly
+              information regarding the user or who the account belongs to.
+            </p>
+          </Modal>
         </div>
       )}
     </div>

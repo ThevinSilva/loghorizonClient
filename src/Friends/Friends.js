@@ -50,7 +50,6 @@ const Friends = () => {
   const [items, setItems] = useState([]);
   // List of sent requests
   const [sent, setSent] = useState([]);
-  // render dummy state serves no purpose but to rerender when tabs are clicked
 
   const profileData = useContext(profileContext);
 
